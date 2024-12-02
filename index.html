@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune 100 - Login & Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">
+        <img src="logo.png" alt="Fortune 100 Logo">
+    </div>
+
+    <h1>Welcome to Fortune 100</h1>
+
+    <div class="button-box">
+        <button id="login-btn" onclick="showLogin()">Login</button>
+        <button id="register-btn" onclick="showRegister()">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="login-form" class="input-group" action="login_process.php" method="POST">
+        <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <button type="submit" class="submit-btn">Login</button>
+        <a href="#" class="link">Forgot Password?</a>
+    </form>
+
+    <!-- Registration Form -->
+    <form id="register-form" class="input-group" action="register_process.php" method="POST">
+        <input type="text" name="name" placeholder="Enter Full Name" required>
+        <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="password" name="password" placeholder="Enter Password" required>
+        <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+        <button type="submit" class="submit-btn">Register</button>
+        <p>By registering, you agree to our <a href="#" class="link">Terms & Conditions</a>.</p>
+    </form>
+
+    <div class="social-media">
+        <p>Or connect with:</p>
+        <a href="#"><img src="google-icon.png" alt="Google"></a>
+        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+    </div>
+</div>
+
+<script>
+    function showLogin() {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+    }
+
+    function showRegister() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
