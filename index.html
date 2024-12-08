@@ -3,62 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fortune 100 - Login & Registration</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Replica of Website</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #B20000; /* Matches red background from screenshot */
+            color: #fff;
+        }
+
+        /* Header Section */
+        .header {
+            background: #FF0000; /* Slightly brighter red for the header */
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .header .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header .action-buttons button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .header .action-buttons button:hover {
+            background: #0056b3;
+        }
+
+        /* Jackpot Section */
+        .jackpot-section {
+            text-align: center;
+            background: linear-gradient(90deg, #FFCC00, #FF9900);
+            color: #000;
+            padding: 20px 0;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        .main-content .menu,
+        .main-content .games {
+            flex: 1;
+        }
+
+        /* Menu Section */
+        .menu {
+            background: #800000;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 10px;
+            margin: 5px 0;
+            background: #FF4000;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        /* Games Section */
+        .games {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .game-card {
+            background: #fff;
+            color: #000;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            flex: 1 0 30%; /* Responsive cards */
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* Footer Navigation */
+        .footer-nav {
+            display: flex;
+            justify-content: space-around;
+            background: #800000;
+            padding: 15px 0;
+        }
+
+        .footer-nav a {
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .footer-nav a .icon {
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="logo">
-        <img src="logo.png" alt="Fortune 100 Logo">
+    <!-- Header Section -->
+    <div class="header">
+        <div class="logo">Fortune3195.com</div>
+        <div class="action-buttons">
+            <button>Register</button>
+            <button>Login</button>
+        </div>
     </div>
 
-    <h1>Welcome to Fortune 100</h1>
-
-    <div class="button-box">
-        <button id="login-btn" onclick="showLogin()">Login</button>
-        <button id="register-btn" onclick="showRegister()">Register</button>
+    <!-- Jackpot Section -->
+    <div class="jackpot-section">
+        Jackpot: 99999💰
     </div>
 
-    <!-- Login Form -->
-    <form id="login-form" class="input-group" action="login_process.php" method="POST">
-        <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
-        <input type="password" name="password" placeholder="Enter Password" required>
-        <button type="submit" class="submit-btn">Login</button>
-        <a href="#" class="link">Forgot Password?</a>
-    </form>
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Menu -->
+        <div class="menu">
+            <ul>
+                <li>Sports</li>
+                <li>Live</li>
+                <li>Cards</li>
+                <li>Blockchain</li>
+                <li>Slots</li>
+            </ul>
+        </div>
 
-    <!-- Registration Form -->
-    <form id="register-form" class="input-group" action="register_process.php" method="POST">
-        <input type="text" name="name" placeholder="Enter Full Name" required>
-        <input type="text" name="mobile" placeholder="Enter Mobile Number" required>
-        <input type="email" name="email" placeholder="Enter Email" required>
-        <input type="password" name="password" placeholder="Enter Password" required>
-        <input type="password" name="confirm-password" placeholder="Confirm Password" required>
-        <button type="submit" class="submit-btn">Register</button>
-        <p>By registering, you agree to our <a href="#" class="link">Terms & Conditions</a>.</p>
-    </form>
+        <!-- Games -->
+        <div class="games">
+            <div class="game-card">
+        <img src="images/game.jpg" alt="Game Image" />
 
-    <div class="social-media">
-        <p>Or connect with:</p>
-        <a href="#"><img src="google-icon.png" alt="Google"></a>
-        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            </div>
+            <div class="game-card">
+                <img src="images/card.png" alt="Game Image" />
+
+            </div>
+            <div class="game-card">
+             <img src="images/game.jpg" alt="Game Image" />
+ 
+                <p>Aviator</p>
+            </div>
+        </div>
     </div>
-</div>
 
-<script>
-    function showLogin() {
-        document.getElementById('login-form').style.display = 'block';
-        document.getElementById('register-form').style.display = 'none';
-    }
-
-    function showRegister() {
-        document.getElementById('login-form').style.display = 'none';
-        document.getElementById('register-form').style.display = 'block';
-    }
-</script>
-
+    <!-- Footer Navigation -->
+    <div class="footer-nav">
+        <a href="#">
+            <span class="icon">🏠 </span>
+            Home
+        </a>
+        <a href="#">
+            <span class="icon">🎁</span>
+            Offers
+        </a>
+        <a href="#">
+            <span class="icon">💸</span>
+            Deposit
+        </a>
+        <a href="#">
+            <span class="icon">📞</span>
+            Support
+        </a>
+        <a href="#">
+            <span class="icon">👩</span>
+            Profile
+        </a>
+    </div>
 </body>
 </html>
