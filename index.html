@@ -1,3 +1,16 @@
+<?php
+// Dragon Tiger Game Logic
+$dragonCard = rand(1, 13);
+$tigerCard = rand(1, 13);
+
+if ($dragonCard > $tigerCard) {
+    $result = "🐉 Dragon Wins!";
+} elseif ($dragonCard < $tigerCard) {
+    $result = "🐯 Tiger Wins!";
+} else {
+    $result = "🤝 It's a Tie!";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,136 +18,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fortune Website</title>
     <style>
-        /* General Styles */
+        /* Add your existing CSS styles here */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #B20000; /* Matches red background */
+            background: #B20000;
             color: #fff;
         }
-
-        /* Header Section */
-        .header {
-            background: #FF0000; /* Slightly brighter red for the header */
+        /* Add styles for Dragon Tiger game here */
+        .game-section {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        .card {
+            font-size: 1.5rem;
+            display: inline-block;
             padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            margin: 10px;
+            border: 2px solid #000;
+            border-radius: 10px;
         }
-
-        .header .logo {
-            font-size: 1.5em;
-            font-weight: bold;
+        .winner {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: green;
         }
-
-        .header .action-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .header .action-buttons a {
-            text-decoration: none;
-        }
-
-        .header .action-buttons button {
-            background: #007BFF;
-            color: #fff;
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
             border: none;
-            padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
         }
-
-        .header .action-buttons button:hover {
-            background: #0056b3;
-        }
-
-        /* Jackpot Section */
-        .jackpot-section {
-            text-align: center;
-            background: linear-gradient(90deg, #FFCC00, #FF9900);
-            color: #000;
-            padding: 20px 0;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-
-        /* Main Content */
-        .main-content {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 20px;
-            gap: 15px;
-        }
-
-        .main-content .menu,
-        .main-content .games {
-            flex: 1;
-        }
-
-        /* Menu Section */
-        .menu {
-            background: #800000;
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu ul li {
-            padding: 10px;
-            margin: 5px 0;
-            background: #FF4000;
-            border-radius: 5px;
-            text-align: center;
-            font-size: 1.1em;
-        }
-
-        /* Games Section */
-        .games {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .game-card {
-            background: #fff;
-            color: #000;
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            flex: 1 0 30%; /* Responsive cards */
-        }
-
-        .game-card img {
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        /* Footer Navigation */
-        .footer-nav {
-            display: flex;
-            justify-content: space-around;
-            background: #800000;
-            padding: 15px 0;
-        }
-
-        .footer-nav a {
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-
-        .footer-nav a .icon {
-            display: block;
-            font-size: 1.5em;
-            margin-bottom: 5px;
+        button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -143,7 +68,6 @@
     <div class="header">
         <div class="logo">Fortune3195.com</div>
         <div class="action-buttons">
-            <!-- Corrected Buttons with Links -->
             <a href="register.html"><button>Register</button></a>
             <a href="login.html"><button>Login</button></a>
         </div>
@@ -154,56 +78,22 @@
         Jackpot: 99999💰
     </div>
 
-    <!-- Main Content Section -->
-    <div class="main-content">
-        <!-- Menu -->
-        <div class="menu">
-            <ul>
-                <li>Sports</li>
-                <li>Live</li>
-                <li>Cards</li>
-                <li>Blockchain</li>
-                <li>Slots</li>
-            </ul>
-        </div>
-
-        <!-- Games -->
-        <div class="games">
-            <div class="game-card">
-                <img src="game.jpg" alt="Game Image">
-            </div>
-            <div class="game-card">
-                <img src="card.png" alt="Card Game Image">
-            </div>
-            <div class="game-card">
-                <img src="aviator.jpeg" alt="Aviator Game Image">
-                <p>Aviator</p>
-            </div>
-        </div>
+    <!-- Dragon Tiger Game Section -->
+    <div class="game-section">
+        <h2>Dragon Tiger Game</h2>
+        <div class="card">🐉 Dragon: <?= $dragonCard; ?></div>
+        <div class="card">🐯 Tiger: <?= $tigerCard; ?></div>
+        <div class="winner"><?= $result; ?></div>
+        <button onclick="location.reload()">Play Again</button>
     </div>
 
     <!-- Footer Navigation -->
     <div class="footer-nav">
-        <a href="#">
-            <span class="icon">🏠</span>
-            Home
-        </a>
-        <a href="#">
-            <span class="icon">🎁</span>
-            Offers
-        </a>
-        <a href="#">
-            <span class="icon">💸</span>
-            Deposit
-        </a>
-        <a href="#">
-            <span class="icon">📞</span>
-            Support
-        </a>
-        <a href="#">
-            <span class="icon">👩</span>
-            Profile
-        </a>
+        <a href="#"><span class="icon">🏠</span> Home</a>
+        <a href="#"><span class="icon">🎁</span> Offers</a>
+        <a href="#"><span class="icon">💸</span> Deposit</a>
+        <a href="#"><span class="icon">📞</span> Support</a>
+        <a href="#"><span class="icon">👩</span> Profile</a>
     </div>
 </body>
 </html>
